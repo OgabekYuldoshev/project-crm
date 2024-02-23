@@ -1,11 +1,10 @@
+import type { Metadata } from 'next';
 
-import type { Metadata } from "next";
-
-import Layout from "@/components/Layout";
+import Layout from '@/components/Layout';
 
 export const metadata: Metadata = {
-  title: "Authenticate",
-  description: "Welcome to our CRM page",
+  title: 'Authenticate',
+  description: 'Welcome to our CRM page',
 };
 
 export default function AuthLayout({
@@ -13,9 +12,5 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <Layout>
-      {children}
-    </Layout>
-  );
+  return <Layout>{children}</Layout>;
 }

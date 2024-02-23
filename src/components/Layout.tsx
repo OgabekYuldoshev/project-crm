@@ -1,20 +1,18 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren } from 'react';
 
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
-    <main className='w-full min-h-screen relative flex'>
+    <main className='relative flex min-h-screen w-full'>
       <Sidebar />
       <section className='flex-1'>
         <Navbar />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
