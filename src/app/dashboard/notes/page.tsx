@@ -1,6 +1,7 @@
 'use client';
-// import { Filter } from 'lucide-react';
+import { Suspense } from 'react';
 
+// import { Filter } from 'lucide-react';
 import Filter from './_components/Filter';
 import List from './_components/List';
 import Sort from './_components/Sort';
@@ -12,12 +13,16 @@ const Page = () => {
       <div className='flex items-center justify-between border-b px-8 py-4'>
         <h1 className='text-xl'>Notes</h1>
         <div className='flex items-center gap-2'>
-          <Sort />
+          <Suspense>
+            <Sort />
+          </Suspense>
           <Filter />
           <CreateNoteForm />
         </div>
       </div>
-      <List />
+      <Suspense>
+        <List />
+      </Suspense>
     </main>
   );
 };
