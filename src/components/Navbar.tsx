@@ -2,7 +2,7 @@ import {
   getKindeServerSession,
   LogoutLink,
 } from '@kinde-oss/kinde-auth-nextjs/server';
-import { ArrowDown, ChevronDown, HelpCircle, LogOut } from 'lucide-react';
+import { ChevronDown, HelpCircle, LogOut } from 'lucide-react';
 import React from 'react';
 
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';

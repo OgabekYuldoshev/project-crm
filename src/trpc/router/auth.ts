@@ -36,5 +36,3 @@ export const authRouter = router({
     };
   }),
 });
-// export type definition of API
-export type AppRouter = typeof authRouter;

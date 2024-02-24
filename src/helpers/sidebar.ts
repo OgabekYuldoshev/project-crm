@@ -19,46 +19,46 @@ export const menu = {
     },
     {
       title: 'Notification',
-      href: '/notification',
+      href: '/dashboard/notification',
       icon: Bell,
     },
     {
       title: 'Notes',
-      href: '/notes',
+      href: '/dashboard/notes',
       icon: NotebookText,
     },
     {
       title: 'Tasks',
-      href: '/tasks',
+      href: '/dashboard/tasks',
       icon: ListTodo,
     },
     {
       title: 'Emails',
-      href: '/emails',
+      href: '/dashboard/emails',
       icon: Mail,
     },
   ],
   analysis: [
     {
       title: 'Analysis',
-      href: '/analysis',
+      href: '/dashboard/analysis',
       icon: BarChart,
     },
     {
       title: 'Contacts',
-      href: '/contacts',
+      href: '/dashboard/contacts',
       icon: Contact,
     },
     {
       title: 'Companies',
-      href: '/companies',
+      href: '/dashboard/companies',
       icon: Briefcase,
     },
   ],
   settings: [
     {
       title: 'Settings',
-      href: '/settings',
+      href: '/dashboard/settings',
       icon: Settings,
     },
   ],

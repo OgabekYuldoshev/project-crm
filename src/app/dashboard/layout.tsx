@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Layout from '@/components/Layout';
 
 export const metadata: Metadata = {
-  title: 'Authenticate',
+  title: 'Welcome',
   description: 'Welcome to our CRM page',
 };
 
