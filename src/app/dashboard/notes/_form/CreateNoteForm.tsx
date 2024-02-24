@@ -1,5 +1,6 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2, Plus, Save } from 'lucide-react';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -13,12 +14,15 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { TCreateNoteValidation } from '@/helpers/validators';
+import {
+  CreateNoteValidation,
+  TCreateNoteValidation
+} from '@/helpers/validators';
 import { trpc } from '@/trpc/client';
 
 const CreateNoteForm = () => {
@@ -29,13 +33,15 @@ const CreateNoteForm = () => {
     control,
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors }
   } = useForm<TCreateNoteValidation>({
+    resolver: zodResolver(CreateNoteValidation),
     defaultValues: {
       title: '',
       content: '',
-      tags: [],
-    },
+      tags: []
+    }
   });
 
   const onSubmit = (data: TCreateNoteValidation) =>
@@ -43,10 +49,15 @@ const CreateNoteForm = () => {
       onSuccess: ({ note_id }) => {
         toast.success(`Successfully created note: ${note_id}`);
         note.invalidate().then(() => {
+          reset({
+            title: '',
+            content: '',
+            tags: []
+          });
           setModal(false);
         });
       },
-      onError: () => toast.error(`Error creating note`),
+      onError: () => toast.error(`Error creating note`)
     });
 
   return (
@@ -67,7 +78,7 @@ const CreateNoteForm = () => {
             <Label htmlFor='title'>Title</Label>
             <Input {...register('title')} type='text' placeholder='write...' />
             {errors.title && (
-              <span className='test-sm text-red-500'>
+              <span className='test-xs text-red-500'>
                 {errors.title.message}
               </span>
             )}
@@ -82,7 +93,7 @@ const CreateNoteForm = () => {
               )}
             />
             {errors.tags && (
-              <span className='test-sm text-red-500'>
+              <span className='test-xs text-red-500'>
                 {errors.tags.message}
               </span>
             )}
@@ -91,7 +102,7 @@ const CreateNoteForm = () => {
             <Label htmlFor='content'>Content</Label>
             <Textarea {...register('content')} placeholder='write...' />
             {errors.content && (
-              <span className='test-sm text-red-500'>
+              <span className='test-xs text-red-500'>
                 {errors.content.message}
               </span>
             )}
