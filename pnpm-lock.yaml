@@ -59,6 +59,9 @@ dependencies:
   lucide-react:
     specifier: ^0.334.0
     version: 0.334.0(react@18.2.0)
+  memoize-one:
+    specifier: ^6.0.0
+    version: 6.0.0
   next:
     specifier: 14.1.0
     version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
@@ -92,6 +95,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.1)
+  use-query-params:
+    specifier: ^2.2.1
+    version: 2.2.1(react-dom@18.2.0)(react@18.2.0)
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -4045,6 +4051,10 @@ packages:
       react: 18.2.0
     dev: false
 
+  /memoize-one@6.0.0:
+    resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
+    dev: false
+
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -4752,6 +4762,10 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
+  /serialize-query-params@2.0.2:
+    resolution: {integrity: sha512-1chMo1dST4pFA9RDXAtF0Rbjaut4is7bzFbI1Z26IuMub68pNCILku85aYmeFhvnY//BXUPUhoRMjYcsT93J/Q==}
+    dev: false
+
   /set-function-length@1.2.1:
     resolution: {integrity: sha512-j4t6ccc+VsKwYHso+kElc5neZpjtq9EnRICFZtWyBsLojhmeF/ZBd/elqm22WJh/BziDe/SBiOeAt0m2mfLD0g==}
     engines: {node: '>= 0.4'}
@@ -5181,6 +5195,24 @@ packages:
       '@types/react': 18.2.57
       react: 18.2.0
       tslib: 2.6.2
+    dev: false
+
+  /use-query-params@2.2.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-i6alcyLB8w9i3ZK3caNftdb+UnbfBRNPDnc89CNQWkGRmDrm/gfydHvMBfVsQJRq3NoHOM2dt/ceBWG2397v1Q==}
+    peerDependencies:
+      '@reach/router': ^1.2.1
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-router-dom: '>=5'
+    peerDependenciesMeta:
+      '@reach/router':
+        optional: true
+      react-router-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      serialize-query-params: 2.0.2
     dev: false
 
   /use-sidecar@1.1.2(@types/react@18.2.57)(react@18.2.0):

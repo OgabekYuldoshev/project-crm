@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -14,14 +15,21 @@ datasource db {
   relationMode = "prisma"
 }
 
+enum Role {
+  MANAGER
+  WORKER
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   email     String   @unique
   firstName String?  @map("first_name")
   lastName  String?  @map("last_name")
   avatar    String?
+  role      Role     @default(WORKER)
   createdAt DateTime @default(now()) @map("created_at")
   Note      Note[]
+  
 }
 
 model Note {

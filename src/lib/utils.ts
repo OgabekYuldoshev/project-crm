@@ -1,4 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
+import memoizeOne from 'memoize-one';
+import { ReadonlyURLSearchParams } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -18,3 +20,21 @@ export function getBaseUrl() {
   // assume localhost
   return `http://localhost:${process.env.PORT ?? 3000}`;
 }
+
+export const createQueryString = memoizeOne(
+  ({
+    queryParams,
+    name,
+    value
+  }: {
+    queryParams: ReadonlyURLSearchParams;
+    name: string;
+    value: string;
+  }) => {
+    const params = new URLSearchParams(queryParams.toString());
+
+    params.set(name, value);
+
+    return params.toString();
+  }
+);
