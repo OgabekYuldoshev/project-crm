@@ -32,7 +32,8 @@ export const noteRouter = router({
             select: {
               id: true,
               firstName: true,
-              lastName: true
+              lastName: true,
+              avatar: true
             }
           }
         }
@@ -70,6 +71,16 @@ export const noteRouter = router({
       const note = await db.note.findFirst({
         where: {
           id: input.id
+        },
+        include: {
+          user: {
+            select: {
+              id: true,
+              firstName: true,
+              lastName: true,
+              avatar: true
+            }
+          }
         }
       });
 

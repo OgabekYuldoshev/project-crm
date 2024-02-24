@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
 
-import { Avatar, AvatarFallback } from './ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 
 export type TNoteCard = {
@@ -10,6 +10,7 @@ export type TNoteCard = {
   tags: string[];
   createdAt: string;
   username: string;
+  avatar: string;
 } & Omit<React.ComponentProps<'div'>, 'className'>;
 
 const NoteCard = ({
@@ -18,6 +19,7 @@ const NoteCard = ({
   content,
   createdAt,
   username,
+  avatar,
   ...props
 }: TNoteCard) => {
   return (
@@ -39,8 +41,9 @@ const NoteCard = ({
       {/* Footer card */}
       <div className='flex items-center justify-between border-t px-4 py-2'>
         <div className='flex items-center space-x-2'>
-          <Avatar className='size-12'>
-            <AvatarFallback>Ts</AvatarFallback>
+          <Avatar className='size-10'>
+            <AvatarImage src={avatar} alt='avatar' />
+            <AvatarFallback>{username}</AvatarFallback>
           </Avatar>
           <span className='text-sm font-semibold'>{username}</span>
         </div>

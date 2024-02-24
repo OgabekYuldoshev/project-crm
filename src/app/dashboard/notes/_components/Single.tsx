@@ -2,6 +2,7 @@ import { Loader2, Trash } from 'lucide-react';
 import React, { useCallback } from 'react';
 import { toast } from 'sonner';
 
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -61,7 +62,16 @@ const Single = ({ id, onClose }: { id: number; onClose: () => void }) => {
           {data?.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}
         </div>
         <p className='text-muted-foreground'>{data?.content}</p>
-        <div className='mt-4 flex justify-end'>
+        <div className='mt-4 flex items-center justify-between'>
+          <div className='flex items-center space-x-2'>
+            <Avatar className='size-8'>
+              <AvatarImage src={data?.user.avatar!} alt='avatar' />
+              <AvatarFallback>{data?.user.firstName}</AvatarFallback>
+            </Avatar>
+            <span className='text-sm font-semibold'>
+              {[data?.user.firstName, data?.user.lastName].join(' ')}
+            </span>
+          </div>
           <Button
             disabled={isPending}
             variant={'destructive'}

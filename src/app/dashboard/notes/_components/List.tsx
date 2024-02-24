@@ -37,6 +37,7 @@ const List = () => {
             key={note.id}
             tags={note.tags}
             username={[note.user.firstName, note.user.lastName].join(' ')}
+            avatar={note.user.avatar!}
             createdAt={note.createdAt}
             title={note.title}
             content={note.content}

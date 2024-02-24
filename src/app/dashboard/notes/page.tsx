@@ -1,8 +1,7 @@
 'use client';
-import { Filter } from 'lucide-react';
+// import { Filter } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
-
+import Filter from './_components/Filter';
 import List from './_components/List';
 import Sort from './_components/Sort';
 import CreateNoteForm from './_form/CreateNoteForm';
@@ -14,10 +13,7 @@ const Page = () => {
         <h1 className='text-xl'>Notes</h1>
         <div className='flex items-center gap-2'>
           <Sort />
-          <Button variant={'outline'}>
-            <Filter className='mr-2' size={18} />
-            Filter
-          </Button>
+          <Filter />
           <CreateNoteForm />
         </div>
       </div>
