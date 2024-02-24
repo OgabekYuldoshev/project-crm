@@ -16,8 +16,8 @@ export const authRouter = router({
 
     const dbUser = await db.user.findFirst({
       where: {
-        email: user.email,
-      },
+        email: user.email
+      }
     });
 
     if (!dbUser) {
@@ -26,13 +26,13 @@ export const authRouter = router({
           firstName: user.given_name,
           lastName: user.family_name,
           email: user.email,
-          avatar: user.picture,
-        },
+          avatar: user.picture
+        }
       });
     }
 
     return {
-      success: true,
+      success: true
     };
-  }),
+  })
 });

@@ -1,6 +1,6 @@
 import {
   LoginLink,
-  RegisterLink,
+  RegisterLink
 } from '@kinde-oss/kinde-auth-nextjs/components';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Image from 'next/image';

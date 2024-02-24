@@ -1,6 +1,6 @@
 import {
   getKindeServerSession,
-  LogoutLink,
+  LogoutLink
 } from '@kinde-oss/kinde-auth-nextjs/server';
 import { ChevronDown, HelpCircle, LogOut } from 'lucide-react';
 import React from 'react';
@@ -12,7 +12,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuShortcut,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from './ui/dropdown-menu';
 
 const Navbar = async () => {
@@ -26,7 +26,7 @@ const Navbar = async () => {
         target='__blank'
         className={buttonVariants({
           variant: 'ghost',
-          className: 'text-accent-foreground',
+          className: 'text-accent-foreground'
         })}
       >
         <HelpCircle className='mr-2' />

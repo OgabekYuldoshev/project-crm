@@ -11,9 +11,9 @@ import { Toaster } from './ui/sonner';
 export const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: getBaseUrl() + '/api/trpc',
-    }),
-  ],
+      url: getBaseUrl() + '/api/trpc'
+    })
+  ]
 });
 export const queryClient = new QueryClient();
 

@@ -14,8 +14,8 @@ const isAuth = t.middleware(async (opts) => {
   }
   const dbUser = await db.user.findFirst({
     where: {
-      email: user.email,
-    },
+      email: user.email
+    }
   });
 
   if (!dbUser) {
@@ -25,8 +25,8 @@ const isAuth = t.middleware(async (opts) => {
   return opts.next({
     ctx: {
       userId: dbUser.id,
-      user: dbUser,
-    },
+      user: dbUser
+    }
   });
 });
 

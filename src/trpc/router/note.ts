@@ -13,64 +13,64 @@ export const noteRouter = router({
         .object({
           params: z
             .object({
-              sort: z.string().optional(),
+              sort: z.string().optional()
             })
-            .optional(),
+            .optional()
         })
         .optional()
     )
     .query(async ({ ctx, input }) => {
       const data = await db.note.findMany({
         where: {
-          userId: ctx.userId,
+          userId: ctx.userId
         },
         orderBy: {
-          createdAt: input?.params?.sort as any,
+          createdAt: input?.params?.sort as any
         },
         include: {
           user: {
             select: {
               id: true,
               firstName: true,
-              lastName: true,
-            },
-          },
-        },
+              lastName: true
+            }
+          }
+        }
       });
 
       return {
         notes: data,
-        success: true,
+        success: true
       };
     }),
   deleteNote: privateProcedure
     .input(
       z.object({
-        id: z.number(),
+        id: z.number()
       })
     )
     .mutation(async ({ input }) => {
       await db.note.delete({
         where: {
-          id: input.id,
-        },
+          id: input.id
+        }
       });
 
       return {
-        success: true,
+        success: true
       };
     }),
   getSingle: privateProcedure
     .input(
       z.object({
-        id: z.number(),
+        id: z.number()
       })
     )
     .query(async ({ input }) => {
       const note = await db.note.findFirst({
         where: {
-          id: input.id,
-        },
+          id: input.id
+        }
       });
 
       if (!note) throw new TRPCClientError('Note not found');
@@ -84,12 +84,12 @@ export const noteRouter = router({
           title: input.title,
           content: input.content,
           tags: input.tags,
-          userId: ctx.user.id,
-        },
+          userId: ctx.user.id
+        }
       });
       return {
         success: true,
-        note_id: newNote.id,
+        note_id: newNote.id
       };
-    }),
+    })
 });

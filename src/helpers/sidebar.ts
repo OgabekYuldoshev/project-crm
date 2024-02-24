@@ -7,7 +7,7 @@ import {
   ListTodo,
   Mail,
   NotebookText,
-  Settings,
+  Settings
 } from 'lucide-react';
 
 export const menu = {
@@ -15,51 +15,51 @@ export const menu = {
     {
       title: 'Dashboard',
       href: '/dashboard',
-      icon: Gauge,
+      icon: Gauge
     },
     {
       title: 'Notification',
       href: '/dashboard/notification',
-      icon: Bell,
+      icon: Bell
     },
     {
       title: 'Notes',
       href: '/dashboard/notes',
-      icon: NotebookText,
+      icon: NotebookText
     },
     {
       title: 'Tasks',
       href: '/dashboard/tasks',
-      icon: ListTodo,
+      icon: ListTodo
     },
     {
       title: 'Emails',
       href: '/dashboard/emails',
-      icon: Mail,
-    },
+      icon: Mail
+    }
   ],
   analysis: [
     {
       title: 'Analysis',
       href: '/dashboard/analysis',
-      icon: BarChart,
+      icon: BarChart
     },
     {
       title: 'Contacts',
       href: '/dashboard/contacts',
-      icon: Contact,
+      icon: Contact
     },
     {
       title: 'Companies',
       href: '/dashboard/companies',
-      icon: Briefcase,
-    },
+      icon: Briefcase
+    }
   ],
   settings: [
     {
       title: 'Settings',
       href: '/dashboard/settings',
-      icon: Settings,
-    },
-  ],
+      icon: Settings
+    }
+  ]
 };

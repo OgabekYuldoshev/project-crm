@@ -12,7 +12,7 @@ const Page = () => {
 
   const data = trpc.auth.callback.useQuery(undefined, {
     retry: true,
-    retryDelay: 500,
+    retryDelay: 500
   });
 
   if (data.isSuccess) {

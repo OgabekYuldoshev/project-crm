@@ -27,7 +27,7 @@ const Sidebar = () => {
             className={cn(
               `inline-flex h-9 w-full items-center justify-start whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-zinc-200 hover:text-accent-foreground focus-visible:outline-none`,
               {
-                'bg-zinc-200 text-accent-foreground': activePathname(item.href),
+                'bg-zinc-200 text-accent-foreground': activePathname(item.href)
               }
             )}
             href={item.href}
@@ -44,7 +44,7 @@ const Sidebar = () => {
             className={cn(
               `inline-flex h-9 w-full items-center justify-start whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-zinc-200 hover:text-accent-foreground focus-visible:outline-none`,
               {
-                'bg-zinc-200 text-accent-foreground': activePathname(item.href),
+                'bg-zinc-200 text-accent-foreground': activePathname(item.href)
               }
             )}
             href={item.href}
@@ -61,7 +61,7 @@ const Sidebar = () => {
             className={cn(
               `inline-flex h-9 w-full items-center justify-start whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-zinc-200 hover:text-accent-foreground focus-visible:outline-none`,
               {
-                'bg-zinc-200 text-accent-foreground': activePathname(item.href),
+                'bg-zinc-200 text-accent-foreground': activePathname(item.href)
               }
             )}
             href={item.href}
